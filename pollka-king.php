@@ -13,7 +13,7 @@ if( ! class_exists( 'PollkaKing' ) ) {
 		
 		private $shortcode_name = 'pollka';
 	
-		public function __construct() {
+		public function register() {
 			add_shortcode( $this->shortcode_name, [$this, 'shortcode'] );
 			add_action( 'wp_enqueue_scripts', [$this, 'scripts'] );
 			add_action( 'wp_ajax_nopriv_pk_submit_poll', [$this, 'submit_poll'] );
@@ -66,5 +66,5 @@ if( ! class_exists( 'PollkaKing' ) ) {
 		}
 
 	}
-	new PollkaKing();
+	(new PollkaKing())->register();
 }

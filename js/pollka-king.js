@@ -3,7 +3,7 @@
 	var pkPoll = Vue.component('pk-poll',{
 		template: '<div class="pk-question">\
 			<h2>{{atts.question}}</h2>\
-			<div claass="radio-group">\
+			<div class="radio-group">\
 				<label v-for="(answer, key) in atts.answers" :key="key"><input type="radio" v-model="selectedAnswer" :value="key" >{{answer}}</label>\
 			</div>\
 			<button @click="submitPoll">Submit</button>\
@@ -27,7 +27,7 @@
 	var pkResults = Vue.component('pk-results',{
 		template: '<div class="pk-results">\
 			<h2>{{atts.question}}</h2>\
-			<div claass="results-group">\
+			<div class="results-group">\
 				<p v-for="(answer, key) in atts.answers" :key="key">\
 					<span>{{answer}} ({{getAnswerRatio(key)}})</span>\
 					<span class="percentage-bar" :style="getAnswerStyle(key)"></span>\
